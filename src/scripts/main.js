@@ -61,22 +61,22 @@
 // document.getElementById("get-data").addEventListener("click", () => {
 //   console.log(data);
 // });
-let xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    let data = this.responseText;
-    jsonData(data);
-  }
-};
-xmlhttp.open("GET", "data.json", true);
-xmlhttp.send();
-function jsonData(data) {
-  let stringData = JSON.parse(data);
-  console.log(stringData);
-  for (x of stringData.persons) {
-    console.log(x);
-  }
-}
+// let xmlhttp = new XMLHttpRequest();
+// xmlhttp.onreadystatechange = function () {
+//   if (this.readyState == 4 && this.status == 200) {
+//     let data = this.responseText;
+//     jsonData(data);
+//   }
+// };
+// xmlhttp.open("GET", "data.json", true);
+// xmlhttp.send();
+// function jsonData(data) {
+//   let stringData = JSON.parse(data);
+//   console.log(stringData);
+//   for (x of stringData.persons) {
+//     console.log(x);
+//   }
+// }
 const sliderMainImage = document.getElementById("product-main-image"); //product container image
 const sliderImageList = document.getElementsByClassName("image-list"); // image thumblian group selection
 // console.log("ok");

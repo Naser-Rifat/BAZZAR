@@ -1,161 +1,225 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <meta charset="UTF-8" />
-  <title>Product Details Page</title>
-  <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
-</head>
-
-<body>
-  <header>
-    <h1>Product Details Page</h1>
-  </header>
-  <!-- <main>
-      <section class="images">
-        <img src="./assets/images/sunglass.jpg" alt="Product 1 Image" />
-        <img src="./assets/images/watch.jpg" alt="Product 2 Image" />
-      </section>
-      <section class="description">
-        <h2>Product Description</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
-          euismod turpis in suscipit. Proin hendrerit, est ac faucibus accumsan,
-          lorem est laoreet lectus, vitae facilisis quam massa id magna.
-        </p>
-      </section>
-      <section class="reviews">
-        <h2>Product Reviews</h2>
-        <div id="reviews-container"></div>
-        <form>
-          <textarea id="review-input"></textarea>
-          <button id="submit-review">Submit Review</button>
-        </form>
-      </section>
-    </main>
-    <section>
-      <button class="open-button" onclick="openForm()">Chat</button> -->
-  <!-- <button id="chat-button">Chat</button>
-      <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-          <h1>Chat</h1>
-
-          <label for="msg"><b>Message</b></label>
-          <textarea placeholder="Type message.." name="msg" required></textarea>
-
-          <button type="submit" class="btn">Send</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">
-            Close
-          </button>
-        </form>
-      </div>
-    </section>
-    <footer>
-      <button id="chat-button">Chat</button>
-    </footer>  -->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Details Page</title>
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/navbar.css" />
+  
+    <link rel="stylesheet" type="text/css" href="./assets/styles/chatbot.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
 
   <body>
-    <div class="container">
-      <div class="single-product">
-        <div class="row">
-          <div class="col-6">
-            <div class="product-image">
-              <div class="product-image-main">
-                <img src="./assets/images/sunglass.jpg" alt="" id="product-main-image">
-              </div>
-              <div class="product-image-slider">
-                <img src="./assets/images/sunglass.jpg" alt="" class="image-list">
-                <img src="./assets/images/watch.jpg" alt="" class="image-list">
-            
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="breadcrumb">
-              <span><a href="#">Home</a></span>
-              <span><a href="#">Product</a></span>
-              <span class="active">T-shirt</span>
-            </div>
-
-            <div class="product">
-              <div class="product-title">
-                <h2>Half Sleve T-shirt for Men</h2>
-              </div>
-              <div class="product-rating">
-                <span><i class="bx bxs-star"></i></span>
-                <span><i class="bx bxs-star"></i></span>
-                <span><i class="bx bxs-star"></i></span>
-                <span><i class="bx bxs-star"></i></span>
-                <span><i class="bx bxs-star"></i></span>
-                <span class="review">(47 Review)</span>
-              </div>
-              <div class="product-price">
-                <span class="offer-price">$99.00</span>
-                <span class="sale-price">$129.00</span>
-              </div>
-
-              <div class="product-details">
-                <h3>Description</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit
-                  perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic
-                  commodi tempore.</p>
-              </div>
-              <div class="product-size">
-                <h4>Size</h4>
-                <div class="size-layout">
-                  <input type="radio" name="size" value="S" id="1" class="size-input">
-                  <label for="1" class="size">S</label>
-
-                  <input type="radio" name="size" value="M" id="2" class="size-input">
-                  <label for="2" class="size">M</label>
-
-                  <input type="radio" name="size" value="L" id="3" class="size-input">
-                  <label for="3" class="size">L</label>
-
-                  <input type="radio" name="size" value="XL" id="4" class="size-input">
-                  <label for="4" class="size">XL</label>
-
-                  <input type="radio" name="size" value="XXL" id="5" class="size-input">
-                  <label for="5" class="size">XXL</label>
-                </div>
-              </div>
-              <div class="product-color">
-                <h4>Color</h4>
-                <div class="color-layout">
-                  <input type="radio" name="color" value="black" class="color-input">
-                  <label for="black" class="black"></label>
-                  <input type="radio" name="color" value="red" class="color-input">
-                  <label for="red" class="red"></label>
-
-                  <input type="radio" name="color" value="blue" class="color-input">
-                  <label for="blue" class="blue"></label>
-                </div>
-              </div>
-              <span class="divider"></span>
-
-              <div class="product-btn-group">
-                <div  id="get-data" class="button buy-now"><i  class='bx bxs-zap'></i> Buy Now</div>
-                <div class="button add-cart"><i class='bx bxs-cart'></i> Add to Cart</div>
-                <div class="button heart"><i class='bx bxs-heart'></i> Add to Wishlist</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <header>
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
       </div>
-    </div>
-    <script type="module"  src="./src/scripts/main.js"></script>
-    <!-- <script>
-      function getData() {
-  console.log("sds");
-}
+    </header>
+    <main>
+      <!-- Product Details Section -->
+      <section class="container">
+        <section class="single-product">
+          <div class="row">
+            <div class="col-6">
+              <div class="product-image">
+                <div class="product-image-main">
+                  <img
+                    src="https://static.aadi.com.bd/__sized__/products/16186-98850-t-shirt-urban-region-213292-1-thumbnail-1080x1080-70.jpg"
+                    alt=""
+                    id="product-main-image"
+                  />
+                </div>
+                <div class="product-image-slider">
+                  <img
+                    src="https://static.aadi.com.bd/__sized__/products/16186-98850-t-shirt-urban-region-213296-1-thumbnail-1080x1080-70.jpg"
+                    alt=""
+                    class="image-list"
+                  />
+                  <img
+                    src="https://static.aadi.com.bd/__sized__/products/16186-98850-t-shirt-urban-region-213292-1-thumbnail-1080x1080-70.jpg"
+                    alt=""
+                    class="image-list"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="breadcrumb">
+                <span><a href="#">Home</a></span>
+                <span><a href="#">Product</a></span>
+                <span class="active">T-shirt</span>
+              </div>
+
+              <div class="product">
+                <div class="product-title">
+                  <h2>
+                    Wild'n Out-Stylish Premium Unisex Half Sleeve Drop Shoulder
+                    Design T-Shirt By Urban Region
+                  </h2>
+                </div>
+
+                <div class="product-price">
+                  <span class="offer-price">৳ 320</span>
+                  <span class="sale-price">৳ 420</span>
+                </div>
+
+                <div class="product-details">
+                  <h3>Description</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quos est magnam quibusdam maiores sit perferendis minima
+                    cupiditate iusto earum repudiandae maxime vitae nostrum, ea
+                    cumque iste ipsa hic commodi tempore.
+                  </p>
+                </div>
+                <div class="product-size">
+                  <h4>Size</h4>
+                  <div class="size-layout">
+                    <input
+                      type="radio"
+                      name="size"
+                      value="S"
+                      id="1"
+                      class="size-input"
+                    />
+                    <label for="1" class="size">S</label>
+
+                    <input
+                      type="radio"
+                      name="size"
+                      value="M"
+                      id="2"
+                      class="size-input"
+                    />
+                    <label for="2" class="size">M</label>
+
+                    <input
+                      type="radio"
+                      name="size"
+                      value="L"
+                      id="3"
+                      class="size-input"
+                    />
+                    <label for="3" class="size">L</label>
+
+                    <input
+                      type="radio"
+                      name="size"
+                      value="XL"
+                      id="4"
+                      class="size-input"
+                    />
+                    <label for="4" class="size">XL</label>
+
+                    <input
+                      type="radio"
+                      name="size"
+                      value="XXL"
+                      id="5"
+                      class="size-input"
+                    />
+                    <label for="5" class="size">XXL</label>
+                  </div>
+                </div>
+                <div class="product-color">
+                  <h4>Color</h4>
+                  <div class="color-layout">
+                    <input
+                      type="radio"
+                      name="color"
+                      value="black"
+                      class="color-input"
+                    />
+                    <label for="black" class="black"></label>
+                    <input
+                      type="radio"
+                      name="color"
+                      value="red"
+                      class="color-input"
+                    />
+                    <label for="red" class="red"></label>
+
+                    <input
+                      type="radio"
+                      name="color"
+                      value="blue"
+                      class="color-input"
+                    />
+                    <label for="blue" class="blue"></label>
+                  </div>
+                </div>
+                <span class="divider"></span>
+
+                <div class="product-btn-group">
+                  <div id="get-data" class="button buy-now">
+                    <i class="bx bxs-zap"></i> Buy Now
+                  </div>
+                  <div class="button add-cart">
+                    <i class="bx bxs-cart"></i> Add to Cart
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- Customer Review Section -->
+      <section class="reviews row">
+        <!-- Left Review Part -->
+        <div class="col-6"></div>
+
+        <!-- Right Review Part -->
+        <div>
+          <h2>Product Reviews</h2>
+          <div class="product-rating">
+            <span><i class="bx bxs-star"></i></span>
+            <span><i class="bx bxs-star"></i></span>
+            <span><i class="bx bxs-star"></i></span>
+            <span><i class="bx bxs-star"></i></span>
+            <span><i class="bx bxs-star"></i></span>
+            <span class="review">(47 Review)</span>
+          </div>
+          <div id="reviews-container"></div>
+          <form>
+            <textarea style="height: 120px; width: 450px"></textarea>
+            <button class="product-btn-group submit-review button">
+              <i class="bx bxs-send"></i>Submit Review
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- chatbot  -->
+      <section>
+        <button class="open-button" onclick="openForm()"><i class="bx bxs-zap"></i></button>
+
+        <div class="chat-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h1>Chat</h1>
+        
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="Type message.." name="msg" required></textarea>
+        
+            <button type="submit" class="btn"><i class="bx bxs-send"></i>Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+      </section>
+    </main>
+    <script src="./src/scripts/main.js"></script>
+    <script>
       function openForm() {
         document.getElementById("myForm").style.display = "block";
       }
-
+      
       function closeForm() {
         document.getElementById("myForm").style.display = "none";
       }
-    </script> -->
+      </script>
   </body>
-
 </html>
