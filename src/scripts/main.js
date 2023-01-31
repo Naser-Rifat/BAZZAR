@@ -11,9 +11,6 @@
 // function closeForm() {
 //   document.getElementById("myForm").style.display = "none";
 // }
-// chatButton.addEventListener("click", () => {
-//   openForm();
-// });
 
 // submitReviewButton.addEventListener("click", (event) => {
 //   event.preventDefault();
@@ -31,9 +28,59 @@
 //   });
 // };
 
+// function getData() {
+// fetch("./products.json")
+//   .then((res) => res.json())
+//   .then((data) => console.log(data));
+// }
+// const getProductData = getData();
+
+// let http = new XMLHttpRequest();
+// http.open("get", "products.json", true);
+// http.send();
+
+// http.onload = function () {
+//   if (http.readyState == 0 && http.status == 0) {
+//     let products = JSON.parse(http.responseText);
+//     console.log(products);
+//   }
+// };
+// console.log(http);
+// document.ready(function () {
+//   // FETCHING DATA FROM JSON FILE
+//   getJSON("products.json", function (data) {
+//     console.log(data);
+//   });
+// });
+//const getData = document.getElementById("get-data");
+// function getData() {
+//   console.log("sds");
+// }
+// const data = require("./data.json");
+// import data from "../../data.json" assert { type: "JSON" };
+// document.getElementById("get-data").addEventListener("click", () => {
+//   console.log(data);
+// });
+let xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+  if (this.readyState == 4 && this.status == 200) {
+    let data = this.responseText;
+    jsonData(data);
+  }
+};
+xmlhttp.open("GET", "data.json", true);
+xmlhttp.send();
+function jsonData(data) {
+  let stringData = JSON.parse(data);
+  console.log(stringData);
+  for (x of stringData.persons) {
+    console.log(x);
+  }
+}
 const sliderMainImage = document.getElementById("product-main-image"); //product container image
 const sliderImageList = document.getElementsByClassName("image-list"); // image thumblian group selection
-console.log(sliderImageList);
+// console.log("ok");
+// console.log(data);
 
 sliderImageList[0].onclick = function () {
   sliderMainImage.src = sliderImageList[0].src;

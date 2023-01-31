@@ -1,0 +1,151 @@
+{
+  "Categories": {
+    "Books": {
+      "Author": {
+        "Kafka": {
+          "Sold": 10,
+          "Price": 110,
+          "Real_price": 110,
+          "Discount": "0%",
+          "Bought_Price": 90,
+          "Currency": "US Dollar",
+          "Number_of_views": 173
+        },
+        "Tolstoy": {
+          "Sold": 7,
+          "Price": 80,
+          "real_price": 100,
+          "Discount": "20%",
+          "Bought_Price": 70,
+          "Currency": "US Dollar",
+          "Number_of_views": 143
+        },
+        "Shakespeare": {
+          "Sold": 13,
+          "Price": 100,
+          "real_price": 100,
+          "Discount": "0%",
+          "Bought_Price": 60,
+          "Currency": "US Dollar",
+          "Number_of_views": 92
+        },
+        "Charles-Dickens": {
+          "Sold": 4,
+          "Price": 40,
+          "Real_price": 50,
+          "Discount": "20%",
+          "Bought_Price": 20,
+          "Currency": "US Dollar",
+          "Number_of_views": 201
+        },
+        "James-Joyce": {
+          "Sold": 4,
+          "Price": 40,
+          "Real_price": 40,
+          "Discount": "0%",
+          "Bought_Price": 20,
+          "Currency": "US Dollar",
+          "Number_of_views": "17"
+        }
+      }
+    },
+    "Watches": {
+      "Brand": {
+        "Rolex": {
+          "Sold": 19,
+          "Price": 4000,
+          "Real_price": 8000,
+          "Discount": "50%",
+          "Bought_Price": 2375,
+          "Currency": "US Dollar",
+          "Number_of_views": 73
+        },
+        "Piaget": {
+          "Sold": 3,
+          "Price": 3335,
+          "Real_price": 3335,
+          "Discount": "0%",
+          "Bought_Price": 1950,
+          "Currency": "US Dollar",
+          "Number_of_views": 17
+        },
+        "Cartier": {
+          "Sold": 36,
+          "Price": 1200,
+          "Real_price": 2000,
+          "Discount": "20%",
+          "Bought_Price": 1100,
+          "Currency": "US Dollar",
+          "Number_of_views": 93
+        },
+        "Blancpain": {
+          "Sold": 23,
+          "Price": 3000,
+          "Real_price": 4000,
+          "Discount": "25%",
+          "Bought_Price": 2500,
+          "Currency": "US Dollar",
+          "Number_of_views": 107
+        },
+        "Longines": {
+          "Sold": 17,
+          "Price": 500,
+          "Real_price": 1000,
+          "Discount": "50%",
+          "Bought_Price": 400,
+          "Currency": "US Dollar",
+          "Number_of_views": 30
+        }
+      }
+    },
+    "Laptops": {
+      "Brand": {
+        "Apple": {
+          "Sold": 17,
+          "Price": 1000,
+          "Real_price": 2000,
+          "Discount": "50%",
+          "Bought_Price": 700,
+          "Currency": "US Dollar",
+          "Number_of_views": 30
+        },
+        "Asus": {
+          "Sold": 31,
+          "Price": 500,
+          "Real_price": 1000,
+          "Discount": "50%",
+          "Bought_Price": 400,
+          "Currency": "US Dollar",
+          "Number_of_views": 63
+        },
+        "Dell": {
+          "Sold": 10,
+          "Price": 900,
+          "Real_price": 900,
+          "Discount": "0%",
+          "Bought_Price": 800,
+          "Currency": "US Dollar",
+          "Number_of_views": 13
+        },
+        "Alienware": {
+          "Sold": 2,
+          "Price": 1900,
+          "Real_price": 2000,
+          "Discount": "5%",
+          "Bought_Price": 1700,
+          "Currency": "US Dollar",
+          "Number_of_views": 37
+        },
+        "Razor": {
+          "Sold": 9,
+          "Price": 1600,
+          "Real_price": 2000,
+          "Discount": "20%",
+          "Bought_Price": 1500,
+          "Currency": "US Dollar",
+          "Number_of_views": 44
+        }
+      }
+    }
+  }
+}
