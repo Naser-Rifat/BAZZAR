@@ -22,12 +22,14 @@
         <a href="#about">About</a>
       </div>
     </header>
-    <main>
+    <main >
+      <h2 style="text-align: center; margin: 20px;">Product Details </h2>
+
       <!-- Product Details Section -->
-      <section class="container">
-        <section class="single-product">
+      <section style="overflow:hidden;" class="container">
+        <section  class="single-product">
           <div class="row">
-            <div class="col-6">
+            <div class="col-6" >
               <div class="product-image">
                 <div class="product-image-main">
                   <img
@@ -50,16 +52,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-6" style="height:900px;" >
               <div class="breadcrumb">
                 <span><a href="#">Home</a></span>
                 <span><a href="#">Product</a></span>
                 <span class="active">T-shirt</span>
               </div>
 
-              <div class="product">
-                <div class="product-title">
-                  <h2>
+              <div class="product"  >
+                <div class="product-title"  >
+                  <h2 style="overflow:hidden;">
                     Wild'n Out-Stylish Premium Unisex Half Sleeve Drop Shoulder
                     Design T-Shirt By Urban Region
                   </h2>
@@ -189,7 +191,7 @@
           <div id="reviews-container"></div>
           <form>
             <textarea style="height: 120px; width: 450px"></textarea>
-            <button class="product-btn-group submit-review button">
+            <button onclick="getData()" class="product-btn-group submit-review button">
               <i class="bx bxs-send"></i>Submit Review
             </button>
           </form>
@@ -211,7 +213,11 @@
           </form>
       </section>
     </main>
-    <script src="./src/scripts/main.js"></script>
+    <script type="" src="./src/scripts/main.js"></script>
+    <script type="module" src="./src//scripts//dashboard.js">
+      
+      
+      </script>
     <script>
       function openForm() {
         document.getElementById("myForm").style.display = "block";
