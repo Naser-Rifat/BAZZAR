@@ -169,7 +169,18 @@ const filterDoughnut4 = filterDoughnut3.map((data, i) =>
     )
   )
 );
-console.log(filterDoughnut4);
+
+const bb = filterDoughnut4.map((data1) =>
+  data1.map((data2) => data2.map((data3) => data3.Sold))
+);
+const aa = bb.map((d) =>
+  d.map((x) =>
+    x.reduce(function (total, num) {
+      return total + num;
+    }, 0)
+  )
+);
+
 const doughnutDataNum = filterDoughnut
   .map((data) => data.Sold)
   .sort(function (a, b) {
@@ -180,7 +191,7 @@ const doughnutDataNum = filterDoughnut
   }, 0);
 
 let labels1 = Object.keys(chartData.Categories).filter((key, i) => key);
-let data1 = doughnutDataNum;
+let data1 = aa;
 let colors1 = ["#49A9EA", "#36CAAB"];
 
 let myDoughnutChart = document.getElementById("myChart").getContext("2d");
