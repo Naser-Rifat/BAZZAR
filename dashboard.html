@@ -9,6 +9,7 @@
       type="text/css"
       href="./assets/styles/dashboard.css"
     />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.css" />
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -31,15 +32,40 @@
         </li>
       </ul>
     </div>
-    <section class="home-section">
+    <man class="home-section">
       <nav>
         <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">Dashboard</span>
         </div>
       </nav>
-    </section>
+      <div class="container">
+        <div class="row">
+          <div class="col-6 chart">
+            <canvas id="myChart" width="500" height="400"></canvas>
+          </div>
+          <div class="col-6 chart">
+            <canvas id="myChart2" width="500" height="400"></canvas>
+          </div>
+          <div class="col-6 chart">
+            <canvas id="myChart4" width="500" height="400"></canvas>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 chart">
+            <canvas id="myChart3" width="500" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+    </man>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.0/chart.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src//scripts//dashboard.js"></script>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");
