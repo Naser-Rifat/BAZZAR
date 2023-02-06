@@ -1,4 +1,4 @@
-export const data = {
+const data = {
   Categories: {
     Books: {
       Author: {
@@ -149,3 +149,4 @@ export const data = {
     },
   },
 };
+module.exports = { data };

@@ -3,6 +3,8 @@
 // const reviewInput = document.querySelector("#review-input");
 // const submitReviewButton = document.querySelector("#submit-review");
 
+const { data } = require("./data");
+
 /* Importing the data from the data.json file. */
 // import { data } from "../../data";
 
@@ -80,7 +82,6 @@
 //     console.log(x);
 //   }
 // }
-
 const sliderMainImage = document.getElementById("product-main-image"); //product container image
 const sliderImageList = document.getElementsByClassName("image-list"); // image thumblian group selection
 // console.log("ok");
@@ -88,7 +89,7 @@ const sliderImageList = document.getElementsByClassName("image-list"); // image 
 sliderImageList[0].onclick = function () {
   sliderMainImage.src = sliderImageList[0].src;
   console.log(sliderMainImage.src);
-  // console.log(data);
+  console.log(data);
 };
 
 sliderImageList[1].onclick = function () {
