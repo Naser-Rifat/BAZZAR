@@ -151,7 +151,11 @@ const chartData = {
     },
   },
 };
-// Chart
+// All Charts
+
+/* A comment. */
+// --------------Chart one---------------------//
+
 const filterDoughnut = Object.values(chartData.Categories.Books.Author).filter(
   (key, i) => key
 );
@@ -163,17 +167,13 @@ const filterDoughnut3 = filterDoughnut2.map((key1, i) =>
   Object.values(key1).filter((key2, i) => key2)
 );
 const filterDoughnut4 = filterDoughnut3.map((data, i) =>
-  data.map((data2) =>
-    Object.values(data2).filter((key) =>
-      Object.values(key).filter(({ Sold }) => console.log(Sold))
-    )
-  )
+  data.map((data2) => Object.values(data2).filter((key) => key))
 );
 
 const bb = filterDoughnut4.map((data1) =>
   data1.map((data2) => data2.map((data3) => data3.Sold))
 );
-const aa = bb.map((d) =>
+const doughnutDataNum = bb.map((d) =>
   d.map((x) =>
     x.reduce(function (total, num) {
       return total + num;
@@ -181,17 +181,16 @@ const aa = bb.map((d) =>
   )
 );
 
-const doughnutDataNum = filterDoughnut
-  .map((data) => data.Sold)
-  .sort(function (a, b) {
-    return b - a;
-  })
-  .reduce(function (total, num) {
-    return total + num;
-  }, 0);
-
+// const doughnutDataNum = filterDoughnut
+//   .map((data) => data.Sold)
+//   .sort(function (a, b) {
+//     return b - a;
+//   })
+//   .reduce(function (total, num) {
+//     return total + num;
+//   }, 0);
 let labels1 = Object.keys(chartData.Categories).filter((key, i) => key);
-let data1 = aa;
+let data1 = doughnutDataNum;
 let colors1 = ["#49A9EA", "#36CAAB"];
 
 let myDoughnutChart = document.getElementById("myChart").getContext("2d");
@@ -208,19 +207,26 @@ let chart1 = new Chart(myDoughnutChart, {
   },
   options: {
     title: {
-      text: "Do you like doughnuts?",
+      text: "doughnut chart",
       display: true,
     },
   },
 });
 
-let labels2 = [
-  "American Airlines Group",
-  "Ryanair",
-  "China Southern Airlines",
-  "Lufthansa Group",
-];
-let data2 = [199.6, 130.3, 126.3, 130];
+// --------------Chart Two---------------------//
+const barChart = filterDoughnut4.map((data1) =>
+  data1.map((data2) => data2.map((data3) => data3.Price))
+);
+const barChartData = barChart.map((d) =>
+  d.map((x) =>
+    x.reduce(function (total, num) {
+      return total + num;
+    }, 0)
+  )
+);
+console.log(barChartData);
+let labels2 = labels1;
+let data2 = barChartData;
 let colors2 = ["#49A9EA", "#36CAAB", "#34495E", "#B370CF"];
 
 let myChart2 = document.getElementById("myChart2").getContext("2d");
@@ -238,7 +244,7 @@ let chart2 = new Chart(myChart2, {
   },
   options: {
     title: {
-      text: "Number of passengers carried in 2017 (in mio.)",
+      text: "Products",
       display: true,
     },
     legend: {
@@ -247,33 +253,67 @@ let chart2 = new Chart(myChart2, {
   },
 });
 
-let labels4 = ["Germany", "France", "UK", "Italy", "Spain", "Others(23)"];
-let data4 = [83, 67, 66, 61, 47, 187];
-let colors4 = [
-  "#49A9EA",
-  "#36CAAB",
-  "#34495E",
-  "#B370CF",
-  "#AC5353",
-  "#CFD4D8",
-];
+// --------------Chart Three---------------------//
+function getBestSellingProducts(data) {
+  let products = [];
+  let views = [];
 
-let myChart4 = document.getElementById("myChart4").getContext("2d");
+  for (let category of Object.values(data)) {
+    for (let subCategory of Object.values(category)) {
+      for (let product of Object.values(subCategory)) {
+        for (let bestProduct of Object.values(product)) {
+          for (let topProduct of Object.entries(bestProduct)) {
+            console.log(topProduct[1].Sold);
+            if (topProduct[1].Sold > 16 && topProduct[1].Number_of_views > 20) {
+              console.log(topProduct[1].Number_of_views);
+              products.push(topProduct[0]);
+              views.push(topProduct[1].Number_of_views);
+            }
+          }
+        }
+      }
+    }
+  }
 
-let chart4 = new Chart(myChart4, {
-  type: "pie",
+  // products.sort((a, b) => b.Sold - a.Sold);
+  return { products, views };
+}
+let data = { chartData }; // your JSON data
+let bestSellingProducts = getBestSellingProducts(data);
+// const bestProduct = bestSellingProducts.map(({ Sold }) => Sold);
+console.log(bestSellingProducts);
+
+let labels3 = bestSellingProducts.products.slice(0, 5);
+let myChart3 = document.getElementById("myChart3").getContext("2d");
+
+let chart3 = new Chart(myChart3, {
+  type: "radar",
   data: {
-    labels: labels4,
+    labels: labels3,
     datasets: [
       {
-        data: data4,
-        backgroundColor: colors4,
+        label: "Product",
+        fill: true,
+        backgroundColor: "rgba(179, 181, 198, 0.2)",
+        borderColor: "rgba(179, 181, 198, 1)",
+        pointBorderColor: "#fff",
+        pointBackgroundColor: "rgba(179, 181, 198, 1)",
+        data: bestSellingProducts.views,
+      },
+      {
+        label: "Review",
+        fill: true,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        pointBorderColor: "#fff",
+        pointBackgroundColor: "rgba(255, 99, 132, 1)",
+        data: [51, 10, 32, 20, 44],
       },
     ],
   },
   options: {
     title: {
-      text: "Population of the European Union (in mio)",
+      text: "best Product",
       display: true,
     },
   },
