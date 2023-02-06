@@ -16,26 +16,6 @@
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      #chartContainer {
-        width: 50%;
-        height: 50%;
-        padding: 100px;
-      }
-      .chart {
-        text-align: center;
-        margin: auto;
-      }
-
-      .row {
-        margin-bottom: 150px;
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 80px;
-      }
-    </style>
   </head>
   <body>
     <div class="sidebar">
@@ -85,97 +65,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript">
-      let labels1 = ["Books", "Watches", "Laptops"];
-      let data1 = [38, 98, 69];
-      let colors1 = ["#49A9EA", "#36CAAB"];
-
-      let myDoughnutChart = document.getElementById("myChart").getContext("2d");
-
-      let chart1 = new Chart(myDoughnutChart, {
-        type: "doughnut",
-        data: {
-          labels: labels1,
-          datasets: [
-            {
-              data: data1,
-              backgroundColor: colors1,
-            },
-          ],
-        },
-        options: {
-          title: {
-            text: "Do you like doughnuts?",
-            display: true,
-          },
-        },
-      });
-
-      let labels2 = [
-        "American Airlines Group",
-        "Ryanair",
-        "China Southern Airlines",
-        "Lufthansa Group",
-      ];
-      let data2 = [199.6, 130.3, 126.3, 130];
-      let colors2 = ["#49A9EA", "#36CAAB", "#34495E", "#B370CF"];
-
-      let myChart2 = document.getElementById("myChart2").getContext("2d");
-
-      let chart2 = new Chart(myChart2, {
-        type: "bar",
-        data: {
-          labels: labels1,
-          datasets: [
-            {
-              data: data2,
-              backgroundColor: colors2,
-            },
-          ],
-        },
-        options: {
-          title: {
-            text: "Number of passengers carried in 2017 (in mio.)",
-            display: true,
-          },
-          legend: {
-            display: false,
-          },
-        },
-      });
-
-      let labels4 = ["Germany", "France", "UK", "Italy", "Spain", "Others(23)"];
-      let data4 = [83, 67, 66, 61, 47, 187];
-      let colors4 = [
-        "#49A9EA",
-        "#36CAAB",
-        "#34495E",
-        "#B370CF",
-        "#AC5353",
-        "#CFD4D8",
-      ];
-
-      let myChart4 = document.getElementById("myChart4").getContext("2d");
-
-      let chart4 = new Chart(myChart4, {
-        type: "pie",
-        data: {
-          labels: labels4,
-          datasets: [
-            {
-              data: data4,
-              backgroundColor: colors4,
-            },
-          ],
-        },
-        options: {
-          title: {
-            text: "Population of the European Union (in mio)",
-            display: true,
-          },
-        },
-      });
-    </script>
+    <script src="./src//scripts//dashboard.js"></script>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

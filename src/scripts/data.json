@@ -42,7 +42,7 @@
           "Sold": 4,
           "Price": 40,
           "Real_price": 40,
-          "Discount": "0%",  38
+          "Discount": "0%",  
           "Bought_Price": 20,
           "Currency": "US Dollar",
           "Number_of_views": "17"
@@ -91,7 +91,7 @@
           "Sold": 17,
           "Price": 500,
           "Real_price": 1000,
-          "Discount": "50%",  98
+          "Discount": "50%",  
           "Bought_Price": 400,
           "Currency": "US Dollar",
           "Number_of_views": 30
@@ -139,7 +139,7 @@
         "Razor": {
           "Sold": 9,
           "Price": 1600,
-          "Real_price": 2000, 69
+          "Real_price": 2000, 
           "Discount": "20%",
           "Bought_Price": 1500,
           "Currency": "US Dollar",
